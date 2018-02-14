@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<a href="/rooms">Show All Rooms</a><br/>
+Address : <span th:text="${room.address}"></span><br/>
+City : <span th:text="${room.city}"></span><br />
+State : <span th:text="${room.state}"></span><br />
+Price : <span th:text="${room.price}"></span><br />
+Description : <span th:text="${room.description}"></span><br />
+Rules : <span th:text="${room.rules}"></span><br />
+Wifi : <span th:text="${room.wifi}"></span><br />
+Cable : <span th:text="${room.cable}"></span><br />
+Private Bathrrom : <span th:text="${room.privateBathroom}"></span><br />
+Rented : <span th:text="${room.rented}"></span><br />
+</body>
+</html>

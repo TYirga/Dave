@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+</head>
+<body>
+<form action="#"
+      th:action="@{/process}"
+      th:object="${room}"
+      method="post">
+    <input type="hidden" th:field="*{id}" />
+    Address : <input type="text" th:field="*{address}" />
+    <span th:if="${#fields.hasErrors('address')}"
+          th:error="*{address}"></span><br />
+    City : <input type="text" th:field="*{city}" />
+    <span th:if="${#fields.hasErrors('city')}"
+          th:error="*{city}"></span><br />
+    State : <input type="text" th:field="*{state}" />
+    <span th:if="${#fields.hasErrors('state')}"
+          th:error="*{state}"></span><br />
+    Price : <input type="text" th:field="*{price}" />
+    <span th:if="${#fields.hasErrors('price')}"
+          th:error="*{price}"></span><br />
+    Description : <input type="text" th:field="*{description}" />
+    <span th:if="${#fields.hasErrors('description')}"
+          th:error="*{description}"></span><br />
+    Rules : <input type="text" th:field="*{rules}" />
+    <span th:if="${#fields.hasErrors('rules')}"
+          th:error="*{rules}"></span><br />
+    Wifi : Yes <input type="radio" th:field="*{wifi}" value="true"/>
+    No<input type="radio" th:field="*{wifi}" value="true" />
+    <span th:if="${#fields.hasErrors('wifi')}"
+          th:error="*{wifi}"></span><br />
+    Cable :
+    None<input type="radio" th:field="*{cable}" value="none" />
+    Basic<input type="radio" th:field="*{cable}" value="basic" />
+    Premium<input type="radio" th:field="*{cable}" value="premium" />
+    <span th:if="${#fields.hasErrors('cable')}"
+          th:error="*{cable}"></span><br />
+    Private Bathroom : Yes<input type="radio" th:field="*{privateBathroom}" value="true"/>
+    No<input type="radio" th:field="*{privateBathroom}" value="false"/>
+    <span th:if="${#fields.hasErrors('privateBathroom')}"
+          th:error="*{privateBathroom}"></span><br />
+    <br />
+    <input type="submit" value="Submit" />
+</form>
+</body>
+</html>

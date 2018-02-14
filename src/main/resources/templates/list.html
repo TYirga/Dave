@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<a href="/add">Add a Room</a>
+<table>
+    <tr>
+        <th>Address</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Price</th>
+    </tr>
+    <tr th:each="room : ${rooms}">
+        <td th:text="${room.address}"></td>
+        <td th:text="${room.city}"></td>
+        <td th:text="${room.state}"></td>
+        <td th:text="${room.price}"></td>
+
+        <td>
+            <a th:href="@{/detail/{id}(id=${room.id})}">Detail</a> -
+            <a th:href="@{/rent/{id}(id=${room.id})}">Rent</a> -
+        </td>
+    </tr>
+</table>
+</body>
+</html>
